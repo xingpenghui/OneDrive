@@ -5,7 +5,7 @@ import com.feri.onedrive.entity.core.OneDir;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient("CarProvider")
+@FeignClient("CarProvider-xph")
 public interface OneDirService {
     //新增
     @PostMapping("/server/dir/savedir.do")

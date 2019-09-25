@@ -21,6 +21,9 @@
 		<module>OneDrive_Common</module>
 		<module>OneDrive_CarServer</module>
         <module>OneDrive_CarApi</module>
+        <module>OneDrive_Admin</module>
+        <module>OneDrive_ResourceApi</module>
+        <module>OneDrive_SearchApi</module>
     </modules>
 	<!--声明版本号-->
 	<properties>

@@ -1,3 +1,27 @@
 注册中心：
-http://39.105.189.141/EurekaServer/
+    http://39.105.189.141/EurekaServer/
 
+Elasticsearch：
+    线上可视化地址：http://39.105.189.141:9100
+    客户端：
+        集群名称：qfjava
+        39.105.189.141
+        9300
+
+RabbitMQ：
+    线上可视化地址：http://39.105.189.141:15672
+    客户端：
+        39.105.189.141
+        5672
+        用户名：guest
+        密码：guest
+
+Redis:
+    39.105.189.141
+    6379
+    密码：qfjava
+
+
+
+项目源码地址：
+https://github.com/xingpenghui/OneDrive

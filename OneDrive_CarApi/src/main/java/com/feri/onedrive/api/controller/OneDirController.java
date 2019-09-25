@@ -23,19 +23,19 @@ public class OneDirController {
 
     //新增
     @ApiOperation(value = "新增字典内容",notes = "新增字典内容")
-    @PostMapping("/server/dir/savedir.do")
+    @PostMapping("/api/dir/savedir.do")
     public R save(@RequestBody OneDir dir){
         return dirService.save(dir);
     }
     //查询
     @ApiOperation(value = "查询字典内容",notes = "查询字典内容")
-    @GetMapping("/server/dir/querydir.do")
+    @GetMapping("/api/dir/querydir.do")
     public R detail(@RequestParam("id") int id){
         return dirService.detail(id);
     }
     //删除
     @ApiOperation(value = "删除字典内容",notes = "删除字典内容")
-    @DeleteMapping("/server/dir/deldir.do")
+    @DeleteMapping("/api/dir/deldir.do")
     public R del(@RequestParam int id){
         return dirService.del(id);
     }

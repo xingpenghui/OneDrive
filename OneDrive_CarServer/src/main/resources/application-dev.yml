@@ -12,3 +12,4 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://39.105.189.141/EurekaServer/eureka/
+

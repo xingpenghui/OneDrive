@@ -2,6 +2,8 @@ server:
   port: 9901
 spring:
   application:
-    name: CarApi
+    name: CarApi-xph
   profiles:
     active: dev  #dev开发环境  test测试环境 prod生产环境(线上环境)
+  main:
+    allow-bean-definition-overriding: true

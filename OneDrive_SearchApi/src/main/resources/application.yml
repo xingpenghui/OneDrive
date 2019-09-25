@@ -1,0 +1,11 @@
+spring:
+  rabbitmq:
+    host: 39.105.189.141
+    port: 5672
+    username: guest
+    password: guest
+  data:
+    elasticsearch:
+      cluster-name: qfjava
+      cluster-nodes: 39.105.189.141:9300
+
