@@ -23,13 +23,15 @@ public class CarSearchController {
     //全部查询  分页
     @GetMapping("/api/search/carall.do")
     @ApiOperation(value = "实现整个内容查询",notes = "实现整个内容查询 分页")
-    public R queryAll(){
-        return null;
+    public R queryAll(int page,int size){
+        return carIndexService.queryAll(page, size);
     }
+
     //模糊查询  分页
     @GetMapping("/api/search/carlike.do")
-    public R queryLike(){
-        return null;
+    @ApiOperation(value = "实现id的模糊查询",notes = "实现id的模糊查询 分页")
+    public R queryLike(int page,int size,String msg){
+        return carIndexService.queryLike(page, size, msg);
     }
 
 }

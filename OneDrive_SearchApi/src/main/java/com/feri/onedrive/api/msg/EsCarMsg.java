@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @program: OneDrive
@@ -22,13 +23,19 @@ public class EsCarMsg {
 
     @Autowired
     private CarIndexDao carIndexDao;
-    @RabbitListener(queues = "escar")
+//    @RabbitListener(queues = "escar")
     public void recMsg(String msg){
         System.out.println("消息监听器："+msg);
         //从Redis 内容  三个key
         //获取数据
         List<String> adds= RedissonUtil.getList(RedisKeyConfig.ES_ADDKEY);
-        if(adds!=null){
+//        CarIndex carIndex=new CarIndex();
+////        carIndex.setBrand("大众");
+////        carIndex.setCtype("朗逸");
+////        carIndex.setName("2016款大众朗逸手动1.6L");
+////        carIndex.setId(new Random().nextInt(10000)+1);
+////        adds.add(JSON.toJSONString(carIndex));
+        if(adds!=null && adds.size()>0){
             //有数据 新增到ES服务器
             //获取新增的数据源 转换为对象
             List<CarIndex> carIndices=new ArrayList<>();
@@ -42,7 +49,7 @@ public class EsCarMsg {
         }
         //删除
         List<String> dels=RedissonUtil.getList(RedisKeyConfig.ES_DELKEY);
-        if(dels!=null){
+        if(dels!=null && dels.size()>0){
             //有删除
             //删除ES中的数据
             for(String s:dels) {
@@ -53,7 +60,7 @@ public class EsCarMsg {
         }
         //修改
         List<String> updates=RedissonUtil.getList(RedisKeyConfig.ES_UPDATEKEY);
-        if(updates!=null){
+        if(updates!=null && updates.size()>0){
             List<CarIndex> carIndices=new ArrayList<>();
             for(String s:updates){
                 carIndices.add(JSON.parseObject(s,CarIndex.class));

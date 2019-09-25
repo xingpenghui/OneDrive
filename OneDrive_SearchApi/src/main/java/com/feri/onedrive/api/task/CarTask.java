@@ -19,10 +19,11 @@ public class CarTask {
     private AmqpTemplate amqpTemplate;
 
     //间隔2小时
-    //@Scheduled(cron = "0 0 0/2 * * ?")
-    @Scheduled(cron = "0/5 * * * * ?")
+    @Scheduled(cron = "0 0 0/2 * * ?")
+//    @Scheduled(cron = "0/30 * * * * ?")
     public void execMQ(){
         //基于RabbitMQ发送消息
+        System.out.println("发送消息："+System.currentTimeMillis()/1000);
         amqpTemplate.convertAndSend(RabbitMQConfig.qName,"同步ES开始："+System.currentTimeMillis()/1000);
     }
 }

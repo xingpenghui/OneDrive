@@ -22,7 +22,8 @@ public class RedissonUtil {
     private static RedissonClient redisson;
     static {
         Config config=new Config();
-        config.useSingleServer().setAddress(ip+":"+port).setDatabase(0).setConnectionPoolSize(10).setConnectTimeout(5000);
+        config.useSingleServer().setPassword("qfjava").setAddress("redis://"+ip+":"+port).
+                setDatabase(0).setConnectTimeout(5000);
         redisson=Redisson.create(config);
     }
 
